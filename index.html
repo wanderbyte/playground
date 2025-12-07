@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradeep | Software Engineer - Finance Specialist</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d6ff7;
+            --accent-color: #00c9a7;
+            --light-bg: #f8fafc;
+            --dark-bg: #0f172a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+        
+        .bg-primary-custom {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .text-accent {
+            color: var(--accent-color) !important;
+        }
+        
+        .bg-accent {
+            background-color: var(--accent-color) !important;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2d3748 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232d6ff7' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .skill-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+        
+        .footer {
+            background-color: var(--dark-bg);
+            color: white;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-primary-custom" href="#">Pradeep</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">Hi, I'm <span class="text-accent">Pradeep</span></h1>
+                    <h2 class="mb-4">Software Engineer</h2>
+                    <p class="lead mb-4">With 3+ years of experience building financial software solutions for Portfolio Management Systems (PMS) and Advisory Firms. Specializing in creating robust, scalable applications for the finance industry.</p>
+                    <a href="#contact" class="btn btn-primary-custom btn-lg px-4 py-3 me-3">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline-light btn-lg px-4 py-3">View My Work</a>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="bg-accent rounded-circle d-inline-block p-4">
+                        <i class="bi bi-code-slash display-1 text-white"></i>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center">
+                            <div class="mx-3">
+                                <h3 class="fw-bold">3+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="mx-3">
+                                <h3 class="fw-bold">10+</h3>
+                                <p>Projects Delivered</p>
+                            </div>
+                            <div class="mx-3">
+                                <h3 class="fw-bold">100%</h3>
+                                <p>Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <p class="fs-5 mb-4">I'm a passionate Software Engineer with 3 years of hands-on experience in developing and maintaining sophisticated financial software systems.</p>
+                    <p class="mb-4">My expertise lies in creating robust Portfolio Management Systems (PMS) and advisory platforms that help financial institutions manage investments, track performance, and provide data-driven insights to their clients.</p>
+                    <p class="mb-4">I have a strong understanding of financial concepts combined with technical expertise to build solutions that are not only technically sound but also align with business objectives and regulatory requirements.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-primary-custom p-2 fs-6">Financial Software</span>
+                        <span class="badge bg-accent p-2 fs-6">Portfolio Management</span>
+                        <span class="badge bg-primary-custom p-2 fs-6">Advisory Platforms</span>
+                        <span class="badge bg-accent p-2 fs-6">FinTech Solutions</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-4 text-primary-custom">My Specialization</h4>
+                            <div class="mb-4">
+                                <h5>Portfolio Management Systems</h5>
+                                <div class="progress mb-3" style="height: 10px;">
+                                    <div class="progress-bar bg-accent" role="progressbar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h5>Financial Advisory Platforms</h5>
+                                <div class="progress mb-3" style="height: 10px;">
+                                    <div class="progress-bar bg-accent" role="progressbar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h5>Investment Tracking & Reporting</h5>
+                                <div class="progress mb-3" style="height: 10px;">
+                                    <div class="progress-bar bg-accent" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h5>Regulatory Compliance Systems</h5>
+                                <div class="progress mb-3" style="height: 10px;">
+                                    <div class="progress-bar bg-accent" role="progressbar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-custom p-3 rounded-circle me-3">
+                                <i class="bi bi-gear text-white fs-4"></i>
+                            </div>
+                            <h4 class="mb-0">Backend Development</h4>
+                        </div>
+                        <p class="mb-0">Java, Spring Boot, Python, Django, Node.js, REST APIs, Microservices, SQL, PostgreSQL, MongoDB</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-accent p-3 rounded-circle me-3">
+                                <i class="bi bi-laptop text-white fs-4"></i>
+                            </div>
+                            <h4 class="mb-0">Frontend Development</h4>
+                        </div>
+                        <p class="mb-0">React.js, Angular, TypeScript, JavaScript, HTML5, CSS3, Bootstrap, Chart.js, D3.js for financial data visualization</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-custom p-3 rounded-circle me-3">
+                                <i class="bi bi-database text-white fs-4"></i>
+                            </div>
+                            <h4 class="mb-0">Financial Technologies</h4>
+                        </div>
+                        <p class="mb-0">PMS Systems, Advisory Platforms, Bloomberg API, Trading Systems, Risk Management, Portfolio Analytics, Financial Reporting</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-accent p-3 rounded-circle me-3">
+                                <i class="bi bi-cloud-arrow-up text-white fs-4"></i>
+                            </div>
+                            <h4 class="mb-0">Cloud & DevOps</h4>
+                        </div>
+                        <p class="mb-0">AWS, Azure, Docker, Kubernetes, CI/CD, Jenkins, Git, Linux, Server Management</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-custom p-3 rounded-circle me-3">
+                                <i class="bi bi-shield-check text-white fs-4"></i>
+                            </div>
+                            <h4 class="mb-0">Finance & Compliance</h4>
+                        </div>
+                        <p class="mb-0">Financial Modeling, Risk Analysis, Portfolio Theory, SEC Regulations, GDPR, FINRA Compliance, Audit Trails</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-item">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-accent p-3 rounded-circle me-3">
+                                <i class="bi bi-tools text-white fs-4"></i>
+                            </div>
+                            <h4 class="mb-0">Tools & Methodologies</h4>
+                        </div>
+                        <p class="mb-0">Agile/Scrum, JIRA, Confluence, Postman, Swagger, GitLab, Financial Data Providers (Bloomberg, Reuters)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <h4 class="text-primary-custom">Senior Software Engineer</h4>
+                            <h5 class="text-accent">Leading FinTech Company</h5>
+                            <p class="text-muted">2022 - Present</p>
+                            <p>Leading development of next-generation Portfolio Management System serving over 50 financial advisory firms. Implemented real-time portfolio analytics, automated reporting, and integration with major trading platforms.</p>
+                            <ul>
+                                <li>Reduced report generation time by 70% through optimization</li>
+                                <li>Integrated Bloomberg API for real-time market data</li>
+                                <li>Built compliance modules for SEC and FINRA regulations</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary-custom">Software Engineer</h4>
+                            <h5 class="text-accent">Financial Advisory Solutions Inc.</h5>
+                            <p class="text-muted">2020 - 2022</p>
+                            <p>Developed and maintained advisory platforms for wealth management firms. Created client-facing dashboards with interactive financial charts and portfolio performance tracking.</p>
+                            <ul>
+                                <li>Built REST APIs for financial data aggregation</li>
+                                <li>Implemented secure client portal with role-based access</li>
+                                <li>Developed automated rebalancing recommendation engine</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-primary-custom">Junior Software Developer</h4>
+                            <h5 class="text-accent">Investment Technology Firm</h5>
+                            <p class="text-muted">2019 - 2020</h4>
+                            <p>Worked on core modules of a Portfolio Management System including transaction processing, portfolio analytics, and client reporting features.</p>
+                            <ul>
+                                <li>Developed trade reconciliation modules</li>
+                                <li>Created performance attribution reports</li>
+                                <li>Implemented batch processing for end-of-day calculations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Financial Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="card h-100 border-0">
+                            <div class="position-relative">
+                                <div class="card-img-top bg-primary-custom d-flex align-items-center justify-content-center" style="height: 200px;">
+                                    <i class="bi bi-pie-chart text-white display-3"></i>
+                                </div>
+                                <span class="position-absolute top-0 end-0 bg-accent text-white p-2 m-3 rounded">PMS</span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-primary-custom">WealthPortfolio Pro</h4>
+                                <p class="card-text">A comprehensive Portfolio Management System for financial advisors with real-time analytics, automated rebalancing, and client reporting.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1">Java</span>
+                                    <span class="badge bg-light text-dark me-1">Spring Boot</span>
+                                    <span class="badge bg-light text-dark me-1">React</span>
+                                    <span class="badge bg-light text-dark">PostgreSQL</span>
+                                </div>
+                                <a href="#" class="btn btn-primary-custom">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="card h-100 border-0">
+                            <div class="position-relative">
+                                <div class="card-img-top bg-accent d-flex align-items-center justify-content-center" style="height: 200px;">
+                                    <i class="bi bi-graph-up text-white display-3"></i>
+                                </div>
+                                <span class="position-absolute top-0 end-0 bg-primary-custom text-white p-2 m-3 rounded">Advisory</span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-primary-custom">AdvisorConnect Platform</h4>
+                                <p class="card-text">An integrated advisory platform connecting financial advisors with clients through interactive dashboards, financial planning tools, and secure messaging.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1">Python</span>
+                                    <span class="badge bg-light text-dark me-1">Django</span>
+                                    <span class="badge bg-light text-dark me-1">Vue.js</span>
+                                    <span class="badge bg-light text-dark">MongoDB</span>
+                                </div>
+                                <a href="#" class="btn btn-primary-custom">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="card h-100 border-0">
+                            <div class="position-relative">
+                                <div class="card-img-top bg-primary-custom d-flex align-items-center justify-content-center" style="height: 200px;">
+                                    <i class="bi bi-shield-check text-white display-3"></i>
+                                </div>
+                                <span class="position-absolute top-0 end-0 bg-accent text-white p-2 m-3 rounded">Compliance</span>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-primary-custom">RegTech Compliance Suite</h4>
+                                <p class="card-text">A regulatory technology solution automating compliance reporting, audit trails, and risk monitoring for financial institutions.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-light text-dark me-1">Node.js</span>
+                                    <span class="badge bg-light text-dark me-1">TypeScript</span>
+                                    <span class="badge bg-light text-dark me-1">AWS</span>
+                                    <span class="badge bg-light text-dark">Docker</span>
+                                </div>
+                                <a href="#" class="btn btn-primary-custom">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="row mb-5">
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <div class="bg-primary-custom rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                        <i class="bi bi-envelope text-white fs-3"></i>
+                                    </div>
+                                    <h5 class="mt-3">Email</h5>
+                                    <p class="mb-0">pradeep@example.com</p>
+                                </div>
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <div class="bg-accent rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                        <i class="bi bi-phone text-white fs-3"></i>
+                                    </div>
+                                    <h5 class="mt-3">Phone</h5>
+                                    <p class="mb-0">+1 (555) 123-4567</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="bg-primary-custom rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                                        <i class="bi bi-geo-alt text-white fs-3"></i>
+                                    </div>
+                                    <h5 class="mt-3">Location</h5>
+                                    <p class="mb-0">Financial District, NY</p>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Subject" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control form-control-lg" rows="5" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary-custom btn-lg px-5 py-3">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h3 class="text-white mb-3">Pradeep</h3>
+                    <p class="text-light mb-0">Software Engineer specializing in Financial Technology Solutions</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-stack-overflow"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light my-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-light mb-0">© 2023 Pradeep. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#home" class="text-light me-3">Home</a>
+                    <a href="#about" class="text-light me-3">About</a>
+                    <a href="#projects" class="text-light me-3">Projects</a>
+                    <a href="#contact" class="text-light">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth scroll script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-shadow');
+            } else {
+                navbar.classList.remove('navbar-shadow');
+            }
+        });
+    </script>
+</body>
+</html>
